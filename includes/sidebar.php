@@ -848,15 +848,70 @@
                 </a>
             </li>
 
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Enrollment Update</h6>
+            </li>
+
             <li class="nav-item">
-                <a class="nav-link" href="../forms/data/breakdown.col.php">
+                <a data-bs-toggle="collapse" href="#update" class="nav-link" aria-controls="update"
+                    role="button" aria-expanded="false">
                     <div
                         class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
-                        <i class="fas fa-newspaper text-dark"></i>
+                        <i class="fas fa-tools text-dark"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Announcements List</span>
+                    <span class="nav-link-text ms-1">Daily Update</span>
                 </a>
+
+                <div class="collapse" id="update">
+                    <ul class="nav ms-4 ps-3">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../enrollment_update/add.enrollment.update.php">
+                                <span class="sidenav-mini-icon text-xs"> </span>
+                                <span class="sidenav-normal font-weight-bold">Add Daily Update</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../enrollment_update/list.enrollment.update.php">
+                                <span class="sidenav-mini-icon text-xs"> </span>
+                                <span class="sidenav-normal font-weight-bold"> Daily Update Lists </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </li>
+
+            <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#update2" class="nav-link" aria-controls="update2"
+                    role="button" aria-expanded="false">
+                    <div
+                        class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fas fa-tools text-dark"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Set Target</span>
+                </a>
+
+                <div class="collapse" id="update2">
+                    <ul class="nav ms-4 ps-3">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../enrollment_update/add.target.php">
+                                <span class="sidenav-mini-icon text-xs"> </span>
+                                <span class="sidenav-normal font-weight-bold">Add Target</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../enrollment_update/list.target.php">
+                                <span class="sidenav-mini-icon text-xs"> </span>
+                                <span class="sidenav-normal font-weight-bold">Target List</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
             ';
             } elseif ("Accounting" == $_SESSION['role']) {
                 echo '<li class="nav-item">

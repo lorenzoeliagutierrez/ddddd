@@ -233,6 +233,14 @@ if (isset($_SESSION['emptyImg'])) {
     echo '<a class="btn bg-gradient-danger w-100 mb-0 toast-btn" data-target="payment_updated"
              id="autoClickBtn" hidden>
          </a>';
+} elseif (isset($_SESSION['updates_exists'])) {
+    echo '<a class="btn bg-gradient-danger w-100 mb-0 toast-btn" data-target="updates_exists"
+             id="autoClickBtn" hidden>
+         </a>';
+} elseif (isset($_SESSION['target_exists'])) {
+    echo '<a class="btn bg-gradient-danger w-100 mb-0 toast-btn" data-target="target_exists"
+             id="autoClickBtn" hidden>
+         </a>';
 }
 
 unset($_SESSION['emptyImg']);
@@ -302,6 +310,9 @@ unset($_SESSION['dates_exists']);
 unset($_SESSION['dates_updated']);
 
 unset($_SESSION['payment_updated']);
+
+unset($_SESSION['updates_exists']);
+unset($_SESSION['target_exists']);
 
 ?>
 
@@ -1056,6 +1067,34 @@ unset($_SESSION['payment_updated']);
         <hr class="horizontal dark m-0">
         <div class="toast-body">
             Payment Status successfully updated.
+        </div>
+    </div>
+
+    <div class="toast fade hide p-2 bg-white" role="alert" aria-live="assertive" id="updates_exists"
+        aria-atomic="true">
+        <div class="toast-header border-0">
+            <i class="ni ni-check-bold text-danger me-2"></i>
+            <span class="me-aume-auto text-gradient text-danger font-weight-bold">Daily Update Already Exists!</span>
+            <small class="text-body"></small>
+            <i class="fas fa-times text-md ms-3 cursor-pointer" data-bs-dismiss="toast" aria-label="Close"></i>
+        </div>
+        <hr class="horizontal dark m-0">
+        <div class="toast-body">
+            Update on this day has already been added!
+        </div>
+    </div>
+
+    <div class="toast fade hide p-2 bg-white" role="alert" aria-live="assertive" id="target_exists"
+        aria-atomic="true">
+        <div class="toast-header border-0">
+            <i class="ni ni-check-bold text-danger me-2"></i>
+            <span class="me-aume-auto text-gradient text-danger font-weight-bold">Target Enrollees Exists!</span>
+            <small class="text-body"></small>
+            <i class="fas fa-times text-md ms-3 cursor-pointer" data-bs-dismiss="toast" aria-label="Close"></i>
+        </div>
+        <hr class="horizontal dark m-0">
+        <div class="toast-body">
+            Target for this Academic Year has already been set!
         </div>
     </div>
     <!-- End of Lorenzo -->
