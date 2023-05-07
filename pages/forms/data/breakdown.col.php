@@ -103,7 +103,8 @@ $date = $_GET['date'];
 
 $pass_date = date('Y-m-d', strtotime($date. ' - 1 year'));
 
-$enrollment_update_status = mysqli_query($db, "SELECT date FROM tbl_enrollment_update WHERE date <= '$date' ORDER BY date DESC LIMIT 1") or die(mysqli_error($db));
+$past_enrollment_update_date = mysqli_query($db, "SELECT date FROM tbl_enrollment_update WHERE date <= '$pass_date' ORDER BY date DESC LIMIT 1") or die(mysqli_error($db));
+$past = mysqli_fetch_array($past_enrollment_update_date);
 
 $school = ['College']; /////////////////////////////////////////////////// change this if you want to add or remove another department/ level
 
@@ -156,7 +157,7 @@ FROM tbl_enrollment_update WHERE date = '$date'") or die(mysqli_error($db));
 $row3 = mysqli_fetch_array($enrollment_update_status);
 
 $enrollment_update_status = mysqli_query($db, "SELECT COALESCE(SUM(daily_new), 0) AS daily_new, COALESCE(SUM(daily_old), 0) AS daily_old, COALESCE(SUM(walkin), 0) AS walkin, COALESCE(SUM(online), 0) AS online
-FROM tbl_enrollment_update WHERE date = '$pass_date'") or die(mysqli_error($db));
+FROM tbl_enrollment_update WHERE date = '$past[date]'") or die(mysqli_error($db));
 $row4 = mysqli_fetch_array($enrollment_update_status);
 
 
